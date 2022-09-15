@@ -1,0 +1,43 @@
+---
+title: "machine learning- Assignment1"
+author: "Meghana reddy"
+date: "2022-09-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#to import dataset 
+```{r}
+input<-read.csv("Car_sales.csv")
+input
+```
+
+#prints the head and tail of the dataset
+```{r}
+head(input)
+tail(input)
+```
+
+#prints summary of the dataset
+```{r}
+summary(input)
+```
+
+#stores two quantitative variables data into fit1 and prints the data
+```{r}
+fit1<-lm(Horsepower ~ Engine_size,data = input )
+fit1
+```
+
+
+#plots the scatterplot between the 2variables 
+#abline is a function adds one or more straight line through the current plot
+```{r}
+plot(Horsepower ~ Engine_size,data = input,col="blue",main="horsepower vs Engine size")
+abline(fit1,col="red")
+ 
+```
+
